@@ -22,7 +22,7 @@
       - functions.php
     notify: Restart httpd
   handlers:
-  - name: Restart the httpd
-    service:
-      name: httpd
-      state: restarted
+    - name: Restart the httpd
+      service:
+        name: httpd
+        state: restarted
