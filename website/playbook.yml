@@ -14,8 +14,8 @@
       state: started
   - name: Deploy php file
     copy:
-    src: '{{item}}'
-    dest: /var/www/html
+      src: "{{ item }}"
+      dest: /var/www/html
     loop:
       - index.php
       - config.php
