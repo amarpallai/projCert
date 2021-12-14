@@ -16,7 +16,7 @@
       repo:
         https://github.com/amarpallai/projCert.git
       dest:
-          /home/ec2-user/proj1
+          /tmp
   - name: Start docker
     service:
       name:
@@ -26,7 +26,7 @@
   - name: Deploy the dockerfile
     command:
       chdir:
-        /home/ec2-user/proj1 docker build -t myphp:1 .
+        /tmp docker build -t myphp:1 .
   - name: Running a container
     command:
       docker run --name myphpcon -d -P myphp:1
