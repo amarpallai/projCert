@@ -14,7 +14,7 @@
   - name: Clone the repository
     git:
       repo:
-        https://github.com/amarpallai/Project1.git
+        https://github.com/amarpallai/projCert.git
       dest:
           /hpme/ec2-user/proj1
   - name: Start docker
