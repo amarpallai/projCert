@@ -14,8 +14,12 @@
       state: started
   - name: Deploy php file
     copy:
-      src: *.php
-      dest: /var/www/html
+    src: '{{item}}'
+    dest: /var/www/html
+    loop:
+      - index.php
+      - config.php
+      - functions.php
     notify: Restart httpd
   handlers:
   - name: Restart the httpd
