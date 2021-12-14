@@ -27,4 +27,8 @@
     command: docker build -t myimage:1 .
     args:
       chdir: /tmp/proj1/website
+      
+  - name: Running a container
+    command:
+      docker run --name myphpcon -d -P myphp:1
 
