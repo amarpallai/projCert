@@ -1,0 +1,24 @@
+---
+- hosts: webserver
+  become: true
+  become_user: root
+
+  tasks:
+  - name: Install httpd
+    yum:
+      name: httpd
+      state: present
+  - name: start httpd
+    service:
+      name: httpd
+      state: started
+  - name: Deploy html file
+    copy:
+      src: index.html
+      dest: /var/www/html
+    notify: Restart httpd
+  handlers:
+    - name: Restart the httpd
+      service:
+        name: httpd
+        state: restarted
