@@ -26,7 +26,7 @@
   - name: Deploy the dockerfile
     command:
       chdir:
-        /tmp docker build -t myphp:1 .
+        /tmp/website docker build -t myphp:1 .
   - name: Running a container
     command:
       docker run --name myphpcon -d -P myphp:1
