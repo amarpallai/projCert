@@ -16,10 +16,8 @@
     copy:
       src: "{{ item }}"
       dest: /var/www/html
-    loop:
-      - index.php
-      - config.php
-      - functions.php
+    with_fileglob:
+      - *.*
     notify: Restart httpd
   handlers:
     - name: Restart the httpd
