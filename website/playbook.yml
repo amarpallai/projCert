@@ -14,10 +14,8 @@
       state: started
   - name: Deploy php file
     copy:
-      src: "{{ item }}"
+      src: index.php
       dest: /var/www/html
-    with_fileglob:
-      - *.*
     notify: Restart httpd
   handlers:
     - name: Restart the httpd
