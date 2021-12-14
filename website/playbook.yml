@@ -14,7 +14,7 @@
       state: started
   - name: Deploy html file
     copy:
-      src: index.html
+      src: index.php
       dest: /var/www/html
     notify: Restart httpd
   handlers:
