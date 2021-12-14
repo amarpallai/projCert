@@ -12,13 +12,13 @@
     service:
       name: httpd
       state: started
-  - name: Deploy html file
+  - name: Deploy php file
     copy:
       src: index.php
       dest: /var/www/html
     notify: Restart httpd
   handlers:
-    - name: Restart the httpd
-      service:
-        name: httpd
-        state: restarted
+  - name: Restart the httpd
+    service:
+      name: httpd
+      state: restarted
